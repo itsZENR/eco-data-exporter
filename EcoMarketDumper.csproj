@@ -1,0 +1,62 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <GameDir Condition="'$(GameDir)' == ''">D:\SteamLibrary\steamapps\common\Eco</GameDir>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="BepInEx.Core">
+      <HintPath>$(GameDir)\BepInEx\core\BepInEx.Core.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="BepInEx.Unity.IL2CPP">
+      <HintPath>$(GameDir)\BepInEx\core\BepInEx.Unity.IL2CPP.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Il2CppInterop.Runtime">
+      <HintPath>$(GameDir)\BepInEx\core\Il2CppInterop.Runtime.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+
+    <Reference Include="Eco.Client">
+      <HintPath>$(GameDir)\BepInEx\interop\Eco.Client.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Eco.Client.Utils">
+      <HintPath>$(GameDir)\BepInEx\interop\Eco.Client.Utils.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Eco.Shared">
+      <HintPath>$(GameDir)\BepInEx\interop\Eco.Shared.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Il2Cppmscorlib">
+      <HintPath>$(GameDir)\BepInEx\interop\Il2Cppmscorlib.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Il2CppSystem">
+      <HintPath>$(GameDir)\BepInEx\interop\Il2CppSystem.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>$(GameDir)\BepInEx\interop\UnityEngine.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>$(GameDir)\BepInEx\interop\UnityEngine.CoreModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>$(GameDir)\BepInEx\interop\UnityEngine.InputLegacyModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <Target Name="CopyPluginToEco" AfterTargets="Build">
+    <MakeDir Directories="$(GameDir)\BepInEx\plugins\EcoMarketDumper" />
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(GameDir)\BepInEx\plugins\EcoMarketDumper" />
+  </Target>
+</Project>

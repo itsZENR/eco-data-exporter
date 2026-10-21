@@ -1,0 +1,10 @@
+bin/
+obj/
+.vs/
+.idea/
+.env
+*.user
+*.suo
+MarketDumps/
+EcoDataDumps/
+BepInEx/

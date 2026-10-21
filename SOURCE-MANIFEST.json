@@ -1,0 +1,17 @@
+[
+  {
+    "path": "Plugin.cs",
+    "bytes": 72456,
+    "sha256": "57215d6ad42cf1b3227eb7ef9e40325320a4d45734918a1d8dbffe8994ea048b"
+  },
+  {
+    "path": "EcoMarketDumper.csproj",
+    "bytes": 2429,
+    "sha256": "c242fc0c0a47a74da00992bc35f8144b70e9b4806758d76d9a89b95ded2ca537"
+  },
+  {
+    "path": "README.txt",
+    "bytes": 2753,
+    "sha256": "3e811e4e248ee1181fd9dba6a64e185cca93e283be1452538c3d18b2701c1a5c"
+  }
+]
